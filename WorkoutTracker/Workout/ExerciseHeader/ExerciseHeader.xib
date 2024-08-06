@@ -29,7 +29,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
-                        <action selector="onTitleEditingChanged:" destination="iN0-l3-epB" eventType="editingChanged" id="x9E-I1-fii"/>
+                        <action selector="onNameEditingChanged:" destination="iN0-l3-epB" eventType="editingChanged" id="x9E-I1-fii"/>
                     </connections>
                 </textField>
             </subviews>
@@ -45,7 +45,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="titleTextField" destination="d5H-ce-ZlC" id="STs-Yh-7N2"/>
+                <outlet property="nameTextField" destination="d5H-ce-ZlC" id="STs-Yh-7N2"/>
             </connections>
             <point key="canvasLocation" x="49.618320610687022" y="-287.32394366197184"/>
         </view>

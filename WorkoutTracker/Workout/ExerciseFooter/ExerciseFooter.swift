@@ -13,14 +13,14 @@ protocol ExerciseFooterDelegate: AnyObject {
 
 class ExerciseFooter: UITableViewHeaderFooterView {
     weak var delegate: ExerciseFooterDelegate?
-    
+
     private var section: Int = -1
 
     func configure(section: Int) {
         self.section = section
     }
 
-    @IBAction func onButtonPressed(_ sender: Any) {
+    @IBAction private func onButtonPressed(_ sender: Any) {
         delegate?.onAddPressed(section: section)
     }
 }

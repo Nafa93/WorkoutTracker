@@ -8,42 +8,32 @@
 import UIKit
 
 protocol WorkoutSetTableViewCellDelegate: AnyObject {
-    func repsDidChange(indexPath: IndexPath, reps: Int)
-    func weightDidChange(indexPath: IndexPath, weight: Double)
+    func onRepsDidChange(indexPath: IndexPath, reps: Int)
+    func onWeightDidChange(indexPath: IndexPath, weight: Double)
 }
 
 class WorkoutSetTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var weightTextField: UITextField!
-
-    @IBOutlet weak var repsTextField: UITextField!
-
     weak var delegate: WorkoutSetTableViewCellDelegate?
 
+    @IBOutlet private var weightTextField: UITextField!
+    @IBOutlet private var repsTextField: UITextField!
+
     private var indexPath: IndexPath!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-
-    @IBAction func repsEditingDidEnd(_ sender: Any) {
-        guard let reps = Int(repsTextField.text ?? "") else { return }
-        delegate?.repsDidChange(indexPath: indexPath, reps: reps)
-    }
-
-    @IBAction func weigthEditingDidEnd(_ sender: Any) {
-        guard let weight = Double(weightTextField.text ?? "") else { return }
-        delegate?.weightDidChange(indexPath: indexPath, weight: weight)
-    }
-    
 
     func setup(_ workoutSet: WorkoutSet, indexPath: IndexPath) {
         weightTextField.text = "\(workoutSet.weight.value)"
         repsTextField.text = "\(workoutSet.repetitions)"
         self.indexPath = indexPath
+    }
+
+    @IBAction private func onRepsEditingChanged(_ sender: Any) {
+        guard let reps = Int(repsTextField.text ?? "") else { return }
+        delegate?.onRepsDidChange(indexPath: indexPath, reps: reps)
+    }
+
+    @IBAction private func onWeightEditingChanged(_ sender: Any) {
+        guard let weight = Double(weightTextField.text ?? "") else { return }
+        delegate?.onWeightDidChange(indexPath: indexPath, weight: weight)
     }
 }

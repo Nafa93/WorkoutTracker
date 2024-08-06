@@ -21,7 +21,7 @@
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                         <connections>
-                            <action selector="repsEditingDidEnd:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="Jhl-io-OzL"/>
+                            <action selector="onRepsEditingChanged:" destination="KGk-i7-Jjw" eventType="editingChanged" id="NCc-dO-qIG"/>
                         </connections>
                     </textField>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REPS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xvb-6g-CNS">
@@ -35,7 +35,7 @@
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                         <connections>
-                            <action selector="weigthEditingDidEnd:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="Jn8-fC-8mM"/>
+                            <action selector="onWeightEditingChanged:" destination="KGk-i7-Jjw" eventType="editingChanged" id="fZG-x0-QTa"/>
                         </connections>
                     </textField>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcy-1L-Ndc">

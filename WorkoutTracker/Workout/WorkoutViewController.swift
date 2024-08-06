@@ -8,12 +8,12 @@
 import UIKit
 
 protocol WorkoutViewControllerDelegate: AnyObject {
-    func workoutDidChange(_ workout: Workout)
+    func onWorkoutDidChange(_ workout: Workout)
 }
 
 class WorkoutViewController: UIViewController {
-    @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var setsTableView: UITableView!
+    @IBOutlet private var titleTextField: UITextField!
+    @IBOutlet private var setsTableView: UITableView!
 
     var viewModel: WorkoutViewModel?
     var coordinator: WorkoutCoordinator?
@@ -32,13 +32,18 @@ class WorkoutViewController: UIViewController {
     }
 
     private func setupNavigationBar() {
-        let button = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(onSavePressed))
+        let button = UIBarButtonItem(
+            title: "Save",
+            style: .done,
+            target: self,
+            action: #selector(onSavePressed)
+        )
         self.navigationItem.setRightBarButton(button, animated: false)
     }
 
     private func setupTableView() {
         setsTableView.register(
-            UINib(nibName: "WorkoutSetTableViewCell", bundle: nil), 
+            UINib(nibName: "WorkoutSetTableViewCell", bundle: nil),
             forCellReuseIdentifier: "WorkoutSetTableViewCell"
         )
         setsTableView.register(
@@ -54,22 +59,22 @@ class WorkoutViewController: UIViewController {
     }
 
     private func setupTitleTextField() {
-        titleTextField.text = viewModel?.workout.title
+        titleTextField.text = viewModel?.title
     }
 
-    @objc func onSavePressed() {
+    @objc private func onSavePressed() {
         guard let workout = viewModel?.workout else { return }
-        delegate?.workoutDidChange(workout)
+        delegate?.onWorkoutDidChange(workout)
         coordinator?.goBack()
     }
 
-    @IBAction func titleEditingDidEnd(_ sender: Any) {
-        guard let title = titleTextField.text else { return }
-        viewModel?.workout.title = title
+    @IBAction private func onTitleEditingChanged(_ sender: UITextField) {
+        guard let title = sender.text else { return }
+        viewModel?.title = title
     }
 
-    @IBAction func onAddExercisePressed(_ sender: Any) {
-        viewModel?.workout.exercises.append(Exercise())
+    @IBAction private func onAddExercisePressed(_ sender: Any) {
+        viewModel?.addExercise()
         setsTableView.reloadData()
     }
 }
@@ -77,16 +82,19 @@ class WorkoutViewController: UIViewController {
 extension WorkoutViewController: UITableViewDelegate, UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        viewModel?.workout.exercises.count ?? 0
+        viewModel?.exercisesCount ?? 0
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel?.workout.exercises[section].sets.count ?? 0
+        viewModel?.setsCount(for: section) ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "WorkoutSetTableViewCell", for: indexPath) as? WorkoutSetTableViewCell,
-           let set = viewModel?.workout.exercises[indexPath.section].sets[indexPath.row]{
+        if let cell = tableView.dequeueReusableCell(
+            withIdentifier: "WorkoutSetTableViewCell",
+            for: indexPath
+        ) as? WorkoutSetTableViewCell,
+           let set = viewModel?.set(for: indexPath) {
             cell.setup(set, indexPath: indexPath)
             cell.delegate = self
             return cell
@@ -99,7 +107,7 @@ extension WorkoutViewController: UITableViewDelegate, UITableViewDataSource {
         let header = setsTableView.dequeueReusableHeaderFooterView(withIdentifier: "ExerciseHeader") as? ExerciseHeader
         header?.delegate = self
         header?.configureHeader(
-            title: viewModel?.workout.exercises[section].name ?? "No title",
+            name: viewModel?.exerciseName(for: section) ?? "No name",
             section: section
         )
         return header
@@ -119,8 +127,8 @@ extension WorkoutViewController: ExerciseHeaderDelegate {
         setsTableView.reloadData()
     }
 
-    func onTitleEditingChanged(section: Int, newTitle: String) {
-        viewModel?.updateTitle(section: section, newTitle: newTitle)
+    func onNameEditingChanged(section: Int, newTitle: String) {
+        viewModel?.updateExerciseName(section: section, name: newTitle)
         setsTableView.reloadData()
     }
 }
@@ -133,11 +141,11 @@ extension WorkoutViewController: ExerciseFooterDelegate {
 }
 
 extension WorkoutViewController: WorkoutSetTableViewCellDelegate {
-    func repsDidChange(indexPath: IndexPath, reps: Int) {
-        viewModel?.workout.exercises[indexPath.section].sets[indexPath.row].repetitions = reps
+    func onRepsDidChange(indexPath: IndexPath, reps: Int) {
+        viewModel?.updateReps(at: indexPath, reps: reps)
     }
 
-    func weightDidChange(indexPath: IndexPath, weight: Double) {
-        viewModel?.workout.exercises[indexPath.section].sets[indexPath.row].weight = .init(value: weight, unit: .kilograms)
+    func onWeightDidChange(indexPath: IndexPath, weight: Double) {
+        viewModel?.updateWeight(at: indexPath, weight: weight)
     }
 }

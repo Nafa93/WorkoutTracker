@@ -10,14 +10,17 @@ import UIKit
 
 class WorkoutCoordinator: Coordinator {
     var navigationController: UINavigationController
-
     var childCoordinators: [any Coordinator]
-
     var workout: Workout
 
-    var delegate: WorkoutViewControllerDelegate?
+    weak var delegate: WorkoutViewControllerDelegate?
 
-    init(navigationController: UINavigationController, childCoordinators: [any Coordinator] = [], workout: Workout, delegate: WorkoutViewControllerDelegate?) {
+    init(
+        navigationController: UINavigationController,
+        childCoordinators: [any Coordinator] = [],
+        workout: Workout,
+        delegate: WorkoutViewControllerDelegate?
+    ) {
         self.navigationController = navigationController
         self.childCoordinators = childCoordinators
         self.workout = workout
@@ -30,7 +33,7 @@ class WorkoutCoordinator: Coordinator {
         viewController.viewModel = viewModel
         viewController.coordinator = self
         viewController.delegate = delegate
-        navigationController.pushViewController(viewController, animated: false)
+        navigationController.pushViewController(viewController, animated: true)
     }
 
     func goBack() {

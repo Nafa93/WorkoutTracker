@@ -9,28 +9,28 @@ import UIKit
 
 protocol ExerciseHeaderDelegate: AnyObject {
     func onDeletePressed(section: Int)
-    func onTitleEditingChanged(section: Int, newTitle: String)
+    func onNameEditingChanged(section: Int, newTitle: String)
 }
 
 class ExerciseHeader: UITableViewHeaderFooterView {
 
-    @IBOutlet weak var titleTextField: UITextField!
-    
     weak var delegate: ExerciseHeaderDelegate?
+
+    @IBOutlet private var nameTextField: UITextField!
 
     private var section: Int = -1
 
-    func configureHeader(title: String, section: Int) {
-        self.titleTextField.text = title
+    func configureHeader(name: String, section: Int) {
+        self.nameTextField.text = name
         self.section = section
     }
 
-    @IBAction func onTitleEditingChanged(_ sender: Any) {
-        guard let title = titleTextField.text else { return }
-        delegate?.onTitleEditingChanged(section: section, newTitle: title)
+    @IBAction private func onNameEditingChanged(_ sender: Any) {
+        guard let title = nameTextField.text else { return }
+        delegate?.onNameEditingChanged(section: section, newTitle: title)
     }
-    
-    @IBAction func onButtonPressed(_ sender: Any) {
+
+    @IBAction private func onButtonPressed(_ sender: Any) {
         delegate?.onDeletePressed(section: section)
     }
 }

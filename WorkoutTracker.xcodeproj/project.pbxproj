@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1930A71B2C597799005EC4C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930A71A2C597799005EC4C3 /* AppDelegate.swift */; };
 		1930A71D2C597799005EC4C3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930A71C2C597799005EC4C3 /* SceneDelegate.swift */; };
-		1930A71F2C597799005EC4C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930A71E2C597799005EC4C3 /* ViewController.swift */; };
 		1930A7242C59779B005EC4C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1930A7232C59779B005EC4C3 /* Assets.xcassets */; };
 		1930A7272C59779B005EC4C3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1930A7262C59779B005EC4C3 /* Base */; };
 		1930A7322C59779B005EC4C3 /* WorkoutTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930A7312C59779B005EC4C3 /* WorkoutTrackerTests.swift */; };
@@ -36,6 +35,7 @@
 		1930A79C2C5D29F3005EC4C3 /* ExerciseHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1930A79B2C5D29F3005EC4C3 /* ExerciseHeader.xib */; };
 		1930A7A02C5D30D4005EC4C3 /* ExerciseFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930A79F2C5D30D4005EC4C3 /* ExerciseFooter.swift */; };
 		1930A7A22C5D30E6005EC4C3 /* ExerciseFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1930A7A12C5D30E6005EC4C3 /* ExerciseFooter.xib */; };
+		1930A7A42C62A8A6005EC4C3 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930A7A32C62A8A6005EC4C3 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +59,6 @@
 		1930A7172C597799005EC4C3 /* WorkoutTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1930A71A2C597799005EC4C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1930A71C2C597799005EC4C3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1930A71E2C597799005EC4C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1930A7232C59779B005EC4C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1930A7262C59779B005EC4C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1930A7282C59779B005EC4C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -89,6 +88,7 @@
 		1930A79B2C5D29F3005EC4C3 /* ExerciseHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseHeader.xib; sourceTree = "<group>"; };
 		1930A79F2C5D30D4005EC4C3 /* ExerciseFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseFooter.swift; sourceTree = "<group>"; };
 		1930A7A12C5D30E6005EC4C3 /* ExerciseFooter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseFooter.xib; sourceTree = "<group>"; };
+		1930A7A32C62A8A6005EC4C3 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,7 +146,6 @@
 				1930A74A2C59783C005EC4C3 /* Home */,
 				1930A71A2C597799005EC4C3 /* AppDelegate.swift */,
 				1930A71C2C597799005EC4C3 /* SceneDelegate.swift */,
-				1930A71E2C597799005EC4C3 /* ViewController.swift */,
 				1930A7232C59779B005EC4C3 /* Assets.xcassets */,
 				1930A7252C59779B005EC4C3 /* LaunchScreen.storyboard */,
 				1930A7282C59779B005EC4C3 /* Info.plist */,
@@ -179,6 +178,7 @@
 				1930A74F2C597886005EC4C3 /* HomeViewController.swift */,
 				1930A7502C597886005EC4C3 /* HomeViewController.xib */,
 				1930A7672C59C41C005EC4C3 /* HomeCoordinator.swift */,
+				1930A7A32C62A8A6005EC4C3 /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -277,6 +277,7 @@
 				1930A7132C597799005EC4C3 /* Sources */,
 				1930A7142C597799005EC4C3 /* Frameworks */,
 				1930A7152C597799005EC4C3 /* Resources */,
+				1930A7A62C62B104005EC4C3 /* Run SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -355,6 +356,9 @@
 				Base,
 			);
 			mainGroup = 1930A70E2C597799005EC4C3;
+			packageReferences = (
+				1930A7A52C62B0D3005EC4C3 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
+			);
 			productRefGroup = 1930A7182C597799005EC4C3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -399,16 +403,37 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1930A7A62C62B104005EC4C3 /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nSWIFT_PACKAGE_DIR=\"${BUILD_DIR%Build/*}SourcePackages/artifacts\"\nSWIFTLINT_CMD=$(ls \"$SWIFT_PACKAGE_DIR\"/swiftlintplugins/SwiftLintBinary/SwiftLintBinary.artifactbundle/swiftlint-*/bin/swiftlint | head -n 1)\n\nif test -f \"$SWIFTLINT_CMD\" 2>&1\nthen\n    \"$SWIFTLINT_CMD\"\nelse\n    echo \"warning: `swiftlint` command not found - See https://github.com/realm/SwiftLint#installation for installation instructions.\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1930A7132C597799005EC4C3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1930A79A2C5D29D9005EC4C3 /* ExerciseHeader.swift in Sources */,
+				1930A7A42C62A8A6005EC4C3 /* HomeViewModel.swift in Sources */,
 				1930A7752C59C6A0005EC4C3 /* WorkoutCoordinator.swift in Sources */,
 				1930A7702C59C654005EC4C3 /* WorkoutViewController.swift in Sources */,
 				1930A7732C59C67D005EC4C3 /* WorkoutViewModel.swift in Sources */,
-				1930A71F2C597799005EC4C3 /* ViewController.swift in Sources */,
 				1930A71B2C597799005EC4C3 /* AppDelegate.swift in Sources */,
 				1930A7662C59C3B9005EC4C3 /* Coordinator.swift in Sources */,
 				1930A75C2C597ED2005EC4C3 /* CreateWorkoutTableViewCell.swift in Sources */,
@@ -595,6 +620,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GMW53CV982;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WorkoutTracker/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -623,6 +649,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GMW53CV982;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WorkoutTracker/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -759,6 +786,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1930A7A52C62B0D3005EC4C3 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.55.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 1930A70F2C597799005EC4C3 /* Project object */;
 }

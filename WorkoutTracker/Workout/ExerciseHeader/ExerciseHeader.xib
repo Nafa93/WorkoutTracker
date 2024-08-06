@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExerciseHeader" customModule="WorkoutTracker" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ExerciseHeader" customModule="WorkoutTracker" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="68"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pw-ap-43p">
+                    <rect key="frame" x="350" y="12" width="43" height="44"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain">
+                        <imageReference key="image" image="trash" catalog="system" symbolScale="medium"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="onButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="8O2-MB-1de"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d5H-ce-ZlC">
+                    <rect key="frame" x="0.0" y="12" width="338" height="44"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="onTitleEditingChanged:" destination="iN0-l3-epB" eventType="editingChanged" id="x9E-I1-fii"/>
+                    </connections>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="6pw-ap-43p" secondAttribute="bottom" constant="12" id="4Ds-a7-ojt"/>
+                <constraint firstItem="d5H-ce-ZlC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="12" id="7Gi-rb-KDa"/>
+                <constraint firstItem="6pw-ap-43p" firstAttribute="leading" secondItem="d5H-ce-ZlC" secondAttribute="trailing" constant="12" id="Clz-wO-zn9"/>
+                <constraint firstItem="d5H-ce-ZlC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="OSm-S1-tLz"/>
+                <constraint firstItem="6pw-ap-43p" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="12" id="r2u-7c-3fX"/>
+                <constraint firstAttribute="bottom" secondItem="d5H-ce-ZlC" secondAttribute="bottom" constant="12" id="yXB-Fr-0Ho"/>
+                <constraint firstAttribute="trailing" secondItem="6pw-ap-43p" secondAttribute="trailing" id="zOr-4r-ish"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="titleTextField" destination="d5H-ce-ZlC" id="STs-Yh-7N2"/>
+            </connections>
+            <point key="canvasLocation" x="49.618320610687022" y="-287.32394366197184"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="trash" catalog="system" width="117" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

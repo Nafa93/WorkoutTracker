@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WorkoutViewController" customModule="WorkoutTracker" customModuleProvider="target">
+            <connections>
+                <outlet property="setsTableView" destination="jnS-JU-dsg" id="Kay-oE-kun"/>
+                <outlet property="titleTextField" destination="ybc-SB-bdD" id="iK6-Dg-rV1"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Zw-M7-5Tv">
+                    <rect key="frame" x="24" y="71" width="345" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ybc-SB-bdD">
+                    <rect key="frame" x="24" y="104" width="345" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="titleEditingDidEnd:" destination="-1" eventType="editingDidEnd" id="6Jq-L7-STI"/>
+                    </connections>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercises" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKQ-m7-3wc">
+                    <rect key="frame" x="24" y="162" width="284" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jnS-JU-dsg">
+                    <rect key="frame" x="24" y="195" width="345" height="611"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Y3-bv-3Fc" userLabel="Add Exercise">
+                    <rect key="frame" x="320" y="155" width="49" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="plus.app" catalog="system" imagePadding="0.0"/>
+                    <connections>
+                        <action selector="onAddExercisePressed:" destination="-1" eventType="touchUpInside" id="R1Z-mj-wy8"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="2Zw-M7-5Tv" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="12" id="17R-ZB-qA3"/>
+                <constraint firstItem="2Zw-M7-5Tv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="6Nb-Hc-dKK"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="jnS-JU-dsg" secondAttribute="bottom" constant="12" id="7MW-6h-gv8"/>
+                <constraint firstItem="jnS-JU-dsg" firstAttribute="top" secondItem="dKQ-m7-3wc" secondAttribute="bottom" constant="12" id="9g5-Lx-UTW"/>
+                <constraint firstItem="ybc-SB-bdD" firstAttribute="top" secondItem="2Zw-M7-5Tv" secondAttribute="bottom" constant="12" id="ENp-tE-l2r"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ybc-SB-bdD" secondAttribute="trailing" constant="24" id="G1C-ZQ-ASl"/>
+                <constraint firstItem="dKQ-m7-3wc" firstAttribute="top" secondItem="ybc-SB-bdD" secondAttribute="bottom" constant="24" id="JwE-7S-LRD"/>
+                <constraint firstItem="jnS-JU-dsg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="KrG-Nx-1Bf"/>
+                <constraint firstItem="1Y3-bv-3Fc" firstAttribute="leading" secondItem="dKQ-m7-3wc" secondAttribute="trailing" constant="12" id="Twu-vU-9KX"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1Y3-bv-3Fc" secondAttribute="trailing" constant="24" id="axf-OI-Agl"/>
+                <constraint firstItem="dKQ-m7-3wc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="hsO-63-1qc"/>
+                <constraint firstItem="1Y3-bv-3Fc" firstAttribute="centerY" secondItem="dKQ-m7-3wc" secondAttribute="centerY" id="t9q-QV-YTp"/>
+                <constraint firstItem="ybc-SB-bdD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="uDz-Cf-0F2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jnS-JU-dsg" secondAttribute="trailing" constant="24" id="w9C-Np-U34"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2Zw-M7-5Tv" secondAttribute="trailing" constant="24" id="zjv-2J-DEx"/>
+            </constraints>
+            <point key="canvasLocation" x="83" y="-11"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="plus.app" catalog="system" width="128" height="114"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

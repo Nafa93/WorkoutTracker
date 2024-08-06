@@ -76,6 +76,10 @@ class WorkoutViewController: UIViewController {
     @IBAction private func onAddExercisePressed(_ sender: Any) {
         viewModel?.addExercise()
         setsTableView.reloadData()
+
+        if let section = viewModel?.exercisesCount {
+            setsTableView.scrollToRow(at: IndexPath(row: 0, section: section - 1), at: .middle, animated: true)
+        }
     }
 }
 
@@ -137,6 +141,7 @@ extension WorkoutViewController: ExerciseFooterDelegate {
     func onAddPressed(section: Int) {
         viewModel?.addSet(section: section)
         setsTableView.reloadData()
+        setsTableView.scrollToRow(at: IndexPath(row: 0, section: section), at: .middle, animated: true)
     }
 }
 

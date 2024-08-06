@@ -22,6 +22,7 @@ class WorkoutSetTableViewCell: UITableViewCell {
     private var indexPath: IndexPath!
 
     func setup(_ workoutSet: WorkoutSet, indexPath: IndexPath) {
+        selectionStyle = .none
         weightTextField.text = "\(workoutSet.weight.value)"
         repsTextField.text = "\(workoutSet.repetitions)"
         self.indexPath = indexPath

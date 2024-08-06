@@ -7,4 +7,8 @@
 
 import UIKit
 
-class CreateWorkoutTableViewCell: UITableViewCell {}
+class CreateWorkoutTableViewCell: UITableViewCell {
+    func setup() {
+        selectionStyle = .none
+    }
+}

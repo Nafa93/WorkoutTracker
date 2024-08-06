@@ -59,6 +59,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
                 withIdentifier: "CreateWorkoutTableViewCell",
                 for: indexPath
             ) as? CreateWorkoutTableViewCell {
+                cell.setup()
                 return cell
             } else {
                 return CreateWorkoutTableViewCell()

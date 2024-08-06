@@ -12,6 +12,7 @@ class WorkoutTableViewCell: UITableViewCell {
     @IBOutlet private var name: UILabel!
 
     func setup(_ workout: Workout) {
+        selectionStyle = .none
         self.name.text = workout.title
     }
 }

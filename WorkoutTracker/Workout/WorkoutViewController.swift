@@ -42,18 +42,9 @@ class WorkoutViewController: UIViewController {
     }
 
     private func setupTableView() {
-        setsTableView.register(
-            UINib(nibName: "WorkoutSetTableViewCell", bundle: nil),
-            forCellReuseIdentifier: "WorkoutSetTableViewCell"
-        )
-        setsTableView.register(
-            UINib(nibName: "ExerciseHeader", bundle: nil),
-            forHeaderFooterViewReuseIdentifier: "ExerciseHeader"
-        )
-        setsTableView.register(
-            UINib(nibName: "ExerciseFooter", bundle: nil),
-            forHeaderFooterViewReuseIdentifier: "ExerciseFooter"
-        )
+        setsTableView.register(WorkoutSetTableViewCell.self)
+        setsTableView.registerHeaderFooter(ExerciseHeader.self)
+        setsTableView.registerHeaderFooter(ExerciseFooter.self)
         setsTableView.dataSource = self
         setsTableView.delegate = self
         setsTableView.showsVerticalScrollIndicator = false
@@ -95,21 +86,15 @@ extension WorkoutViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(
-            withIdentifier: "WorkoutSetTableViewCell",
-            for: indexPath
-        ) as? WorkoutSetTableViewCell,
-           let set = viewModel?.set(for: indexPath) {
-            cell.setup(set, indexPath: indexPath)
-            cell.delegate = self
-            return cell
-        } else {
-            return WorkoutSetTableViewCell()
-        }
+        guard let set = viewModel?.set(for: indexPath) else { return UITableViewCell() }
+        let cell = tableView.dequeueReusableCell(WorkoutSetTableViewCell.self, indexPath: indexPath)
+        cell.setup(set, indexPath: indexPath)
+        cell.delegate = self
+        return cell
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = setsTableView.dequeueReusableHeaderFooterView(withIdentifier: "ExerciseHeader") as? ExerciseHeader
+        let header = setsTableView.dequeueReusableHeaderFooterView(ExerciseHeader.self)
         header?.delegate = self
         header?.configureHeader(
             name: viewModel?.exerciseName(for: section) ?? "No name",
@@ -119,7 +104,7 @@ extension WorkoutViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let footer = setsTableView.dequeueReusableHeaderFooterView(withIdentifier: "ExerciseFooter") as? ExerciseFooter
+        let footer = setsTableView.dequeueReusableHeaderFooterView(ExerciseFooter.self)
         footer?.delegate = self
         footer?.configure(section: section)
         return footer

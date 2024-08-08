@@ -17,14 +17,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.register(
-            UINib(nibName: "WorkoutTableViewCell", bundle: nil),
-            forCellReuseIdentifier: "WorkoutTableViewCell"
-        )
-        tableView.register(
-            UINib(nibName: "CreateWorkoutTableViewCell", bundle: nil),
-            forCellReuseIdentifier: "CreateWorkoutTableViewCell"
-        )
+        tableView.register(WorkoutTableViewCell.self)
+        tableView.register(CreateWorkoutTableViewCell.self)
         tableView.dataSource = self
         tableView.delegate = self
     }
@@ -55,26 +49,14 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 
         switch section {
         case .create:
-            if let cell = tableView.dequeueReusableCell(
-                withIdentifier: "CreateWorkoutTableViewCell",
-                for: indexPath
-            ) as? CreateWorkoutTableViewCell {
-                cell.setup()
-                return cell
-            } else {
-                return CreateWorkoutTableViewCell()
-            }
+            let cell = tableView.dequeueReusableCell(CreateWorkoutTableViewCell.self, indexPath: indexPath)
+            cell.setup()
+            return cell
         case .workouts:
-            if let cell = tableView.dequeueReusableCell(
-                withIdentifier: "WorkoutTableViewCell",
-                for: indexPath
-            ) as? WorkoutTableViewCell,
-               let workout = viewModel?.workout(for: indexPath.row) {
-                cell.setup(workout)
-                return cell
-            } else {
-                return WorkoutTableViewCell()
-            }
+            guard let workout = viewModel?.workout(for: indexPath.row) else { return UITableViewCell() }
+            let cell = tableView.dequeueReusableCell(WorkoutTableViewCell.self, indexPath: indexPath)
+            cell.setup(workout)
+            return cell
         }
     }
 

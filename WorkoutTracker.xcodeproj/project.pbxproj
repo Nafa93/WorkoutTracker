@@ -36,6 +36,7 @@
 		1930A7A02C5D30D4005EC4C3 /* ExerciseFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930A79F2C5D30D4005EC4C3 /* ExerciseFooter.swift */; };
 		1930A7A22C5D30E6005EC4C3 /* ExerciseFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1930A7A12C5D30E6005EC4C3 /* ExerciseFooter.xib */; };
 		1930A7A42C62A8A6005EC4C3 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930A7A32C62A8A6005EC4C3 /* HomeViewModel.swift */; };
+		1930A7A82C654807005EC4C3 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930A7A72C654807005EC4C3 /* UITableView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		1930A79F2C5D30D4005EC4C3 /* ExerciseFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseFooter.swift; sourceTree = "<group>"; };
 		1930A7A12C5D30E6005EC4C3 /* ExerciseFooter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseFooter.xib; sourceTree = "<group>"; };
 		1930A7A32C62A8A6005EC4C3 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		1930A7A72C654807005EC4C3 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +247,7 @@
 		1930A7962C5D25D6005EC4C3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				1930A7A72C654807005EC4C3 /* UITableView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				1930A7662C59C3B9005EC4C3 /* Coordinator.swift in Sources */,
 				1930A75C2C597ED2005EC4C3 /* CreateWorkoutTableViewCell.swift in Sources */,
 				1930A7592C597B18005EC4C3 /* WorkoutSet.swift in Sources */,
+				1930A7A82C654807005EC4C3 /* UITableView+Extensions.swift in Sources */,
 				1930A7852C5BCC63005EC4C3 /* WorkoutSetTableViewCell.swift in Sources */,
 				1930A71D2C597799005EC4C3 /* SceneDelegate.swift in Sources */,
 				1930A7552C597AD5005EC4C3 /* Workout.swift in Sources */,

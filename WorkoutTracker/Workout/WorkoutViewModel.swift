@@ -62,4 +62,8 @@ class WorkoutViewModel: NSObject {
     func removeExercise(section: Int) {
         workout.exercises.remove(at: section)
     }
+
+    func deleteSet(at indexPath: IndexPath) {
+        workout.exercises[indexPath.section].sets.remove(at: indexPath.row)
+    }
 }

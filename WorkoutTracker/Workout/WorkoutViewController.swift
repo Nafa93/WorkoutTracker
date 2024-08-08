@@ -124,6 +124,23 @@ extension WorkoutViewController: UITableViewDelegate, UITableViewDataSource {
         footer?.configure(section: section)
         return footer
     }
+
+    func tableView(
+        _ tableView: UITableView,
+        trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath
+    ) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(
+            style: .destructive,
+            title: nil
+        ) { [weak self] (_, _, completionHandler) in
+            self?.viewModel?.deleteSet(at: indexPath)
+            self?.setsTableView.reloadData()
+            completionHandler(true)
+        }
+        deleteAction.image = UIImage(systemName: "trash")
+        deleteAction.backgroundColor = .systemRed
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
 }
 
 extension WorkoutViewController: ExerciseHeaderDelegate {

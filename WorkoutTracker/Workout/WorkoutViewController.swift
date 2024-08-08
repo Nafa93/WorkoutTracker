@@ -56,6 +56,7 @@ class WorkoutViewController: UIViewController {
         )
         setsTableView.dataSource = self
         setsTableView.delegate = self
+        setsTableView.showsVerticalScrollIndicator = false
     }
 
     private func setupTitleTextField() {

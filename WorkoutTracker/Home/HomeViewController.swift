@@ -17,6 +17,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        viewModel?.load()
+
         tableView.register(WorkoutTableViewCell.self)
         tableView.register(CreateWorkoutTableViewCell.self)
         tableView.dataSource = self

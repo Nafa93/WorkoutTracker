@@ -37,6 +37,9 @@
 		1930A7A22C5D30E6005EC4C3 /* ExerciseFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1930A7A12C5D30E6005EC4C3 /* ExerciseFooter.xib */; };
 		1930A7A42C62A8A6005EC4C3 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930A7A32C62A8A6005EC4C3 /* HomeViewModel.swift */; };
 		1930A7A82C654807005EC4C3 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930A7A72C654807005EC4C3 /* UITableView+Extensions.swift */; };
+		1930A7AB2C654A52005EC4C3 /* WorkoutRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930A7AA2C654A52005EC4C3 /* WorkoutRepository.swift */; };
+		1930A7AD2C654FE7005EC4C3 /* Gateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930A7AC2C654FE7005EC4C3 /* Gateway.swift */; };
+		1930A7AF2C65500C005EC4C3 /* LocalGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930A7AE2C65500C005EC4C3 /* LocalGateway.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +94,9 @@
 		1930A7A12C5D30E6005EC4C3 /* ExerciseFooter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseFooter.xib; sourceTree = "<group>"; };
 		1930A7A32C62A8A6005EC4C3 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		1930A7A72C654807005EC4C3 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		1930A7AA2C654A52005EC4C3 /* WorkoutRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutRepository.swift; sourceTree = "<group>"; };
+		1930A7AC2C654FE7005EC4C3 /* Gateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gateway.swift; sourceTree = "<group>"; };
+		1930A7AE2C65500C005EC4C3 /* LocalGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalGateway.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +147,7 @@
 		1930A7192C597799005EC4C3 /* WorkoutTracker */ = {
 			isa = PBXGroup;
 			children = (
+				1930A7A92C654A42005EC4C3 /* Repositories */,
 				1930A7962C5D25D6005EC4C3 /* Extensions */,
 				1930A7692C59C618005EC4C3 /* Workout */,
 				1930A7642C59C3A5005EC4C3 /* Navigation */,
@@ -268,6 +275,16 @@
 				1930A7A12C5D30E6005EC4C3 /* ExerciseFooter.xib */,
 			);
 			path = ExerciseFooter;
+			sourceTree = "<group>";
+		};
+		1930A7A92C654A42005EC4C3 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				1930A7AA2C654A52005EC4C3 /* WorkoutRepository.swift */,
+				1930A7AC2C654FE7005EC4C3 /* Gateway.swift */,
+				1930A7AE2C65500C005EC4C3 /* LocalGateway.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -441,13 +458,16 @@
 				1930A7662C59C3B9005EC4C3 /* Coordinator.swift in Sources */,
 				1930A75C2C597ED2005EC4C3 /* CreateWorkoutTableViewCell.swift in Sources */,
 				1930A7592C597B18005EC4C3 /* WorkoutSet.swift in Sources */,
+				1930A7AD2C654FE7005EC4C3 /* Gateway.swift in Sources */,
 				1930A7A82C654807005EC4C3 /* UITableView+Extensions.swift in Sources */,
 				1930A7852C5BCC63005EC4C3 /* WorkoutSetTableViewCell.swift in Sources */,
 				1930A71D2C597799005EC4C3 /* SceneDelegate.swift in Sources */,
+				1930A7AB2C654A52005EC4C3 /* WorkoutRepository.swift in Sources */,
 				1930A7552C597AD5005EC4C3 /* Workout.swift in Sources */,
 				1930A7512C597886005EC4C3 /* HomeViewController.swift in Sources */,
 				1930A7622C598023005EC4C3 /* WorkoutTableViewCell.swift in Sources */,
 				1930A7572C597B02005EC4C3 /* Exercise.swift in Sources */,
+				1930A7AF2C65500C005EC4C3 /* LocalGateway.swift in Sources */,
 				1930A7682C59C41C005EC4C3 /* HomeCoordinator.swift in Sources */,
 				1930A7A02C5D30D4005EC4C3 /* ExerciseFooter.swift in Sources */,
 			);

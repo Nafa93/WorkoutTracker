@@ -29,11 +29,12 @@ class HomeViewModel {
         return sections.count
     }
 
-    private var workouts: [Workout]
+    private var workouts: [Workout] = []
     private var sections: [SectionType] = SectionType.allCases
+    private var workoutRepository: WorkoutRepository
 
-    init(workouts: [Workout]) {
-        self.workouts = workouts
+    init(workoutRepository: WorkoutRepository) {
+        self.workoutRepository = workoutRepository
     }
 
     func workout(for row: Int) -> Workout {
@@ -50,5 +51,11 @@ class HomeViewModel {
         } else {
             workouts.append(workout)
         }
+
+        workoutRepository.save(workouts)
+    }
+
+    func load() {
+        workouts = workoutRepository.load()
     }
 }

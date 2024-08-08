@@ -19,35 +19,8 @@ class HomeCoordinator: Coordinator {
 
     func start() {
         let viewController = HomeViewController()
-        let viewModel = HomeViewModel(workouts: [
-            Workout(
-                title: "Push #1",
-                exercises: [
-                    Exercise(
-                        name: "Bench Press",
-                        sets: [
-                            WorkoutSet(
-                                weight: .init(value: 100, unit: .kilograms),
-                                repetitions: 10
-                            )
-                        ]
-                    ),
-                    Exercise(
-                        name: "Dumbell Fly",
-                        sets: [
-                            WorkoutSet(
-                                weight: .init(value: 100, unit: .kilograms),
-                                repetitions: 10
-                            ),
-                            WorkoutSet(
-                                weight: .init(value: 100, unit: .kilograms),
-                                repetitions: 10
-                            )
-                        ]
-                    )
-                ]
-            )
-        ])
+        let repository = WorkoutRepository(gateway: LocalGateway<Workout>(fileName: "workouts"))
+        let viewModel = HomeViewModel(workoutRepository: repository)
         viewController.viewModel = viewModel
         viewController.coordinator = self
         navigationController.pushViewController(viewController, animated: false)

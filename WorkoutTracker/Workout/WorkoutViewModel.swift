@@ -44,7 +44,16 @@ class WorkoutViewModel: NSObject {
     }
 
     func addSet(section: Int) {
-        workout.exercises[section].sets.append(WorkoutSet())
+        if let previousSet = workout.exercises[section].sets.last {
+            workout.exercises[section].sets.append(
+                WorkoutSet(
+                    weight: previousSet.weight,
+                    repetitions: previousSet.repetitions
+                )
+            )
+        } else {
+            workout.exercises[section].sets.append(WorkoutSet())
+        }
     }
 
     func updateExerciseName(section: Int, name: String) {

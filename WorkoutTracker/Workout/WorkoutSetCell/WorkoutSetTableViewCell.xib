@@ -16,49 +16,51 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I74-rv-BZI">
-                        <rect key="frame" x="12" y="12" width="32" height="20"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                        <connections>
-                            <action selector="onRepsEditingChanged:" destination="KGk-i7-Jjw" eventType="editingChanged" id="NCc-dO-qIG"/>
-                        </connections>
-                    </textField>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REPS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xvb-6g-CNS">
-                        <rect key="frame" x="56" y="12" width="42" height="20"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bRD-kb-O50">
-                        <rect key="frame" x="110.00000000000001" y="12" width="163.33333333333337" height="20"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                        <connections>
-                            <action selector="onWeightEditingChanged:" destination="KGk-i7-Jjw" eventType="editingChanged" id="fZG-x0-QTa"/>
-                        </connections>
-                    </textField>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcy-1L-Ndc">
-                        <rect key="frame" x="285.33333333333331" y="12" width="22.666666666666686" height="20"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="V1d-94-khZ">
+                        <rect key="frame" x="0.0" y="12" width="334" height="20"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I74-rv-BZI">
+                                <rect key="frame" x="0.0" y="0.0" width="70" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="3ml-GK-uiA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="onRepsEditingChanged:" destination="KGk-i7-Jjw" eventType="editingChanged" id="NCc-dO-qIG"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REPS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xvb-6g-CNS">
+                                <rect key="frame" x="88" y="0.0" width="70" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bRD-kb-O50">
+                                <rect key="frame" x="176" y="0.0" width="70" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="0rG-VG-oCX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="onWeightEditingChanged:" destination="KGk-i7-Jjw" eventType="editingChanged" id="fZG-x0-QTa"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcy-1L-Ndc">
+                                <rect key="frame" x="264" y="0.0" width="70" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="mcy-1L-Ndc" secondAttribute="bottom" constant="12" id="AJl-s8-3qf"/>
-                    <constraint firstItem="mcy-1L-Ndc" firstAttribute="leading" secondItem="bRD-kb-O50" secondAttribute="trailing" constant="12" id="CPn-8p-0Bk"/>
-                    <constraint firstAttribute="bottom" secondItem="I74-rv-BZI" secondAttribute="bottom" constant="12" id="EpD-LI-Sjd"/>
-                    <constraint firstItem="bRD-kb-O50" firstAttribute="leading" secondItem="Xvb-6g-CNS" secondAttribute="trailing" constant="12" id="Ez3-Fr-QAJ"/>
-                    <constraint firstAttribute="bottom" secondItem="bRD-kb-O50" secondAttribute="bottom" constant="12" id="IVS-yO-fGm"/>
-                    <constraint firstItem="I74-rv-BZI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="J8T-5e-7m7"/>
-                    <constraint firstItem="I74-rv-BZI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="bDu-nd-J6t"/>
-                    <constraint firstItem="mcy-1L-Ndc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="d9I-Us-qYT"/>
-                    <constraint firstAttribute="bottom" secondItem="Xvb-6g-CNS" secondAttribute="bottom" constant="12" id="mFW-9q-8pl"/>
-                    <constraint firstItem="Xvb-6g-CNS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="muM-Kr-bqY"/>
-                    <constraint firstItem="bRD-kb-O50" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="od1-54-P3w"/>
-                    <constraint firstAttribute="trailing" secondItem="mcy-1L-Ndc" secondAttribute="trailing" constant="12" id="rg3-RA-SYp"/>
-                    <constraint firstItem="Xvb-6g-CNS" firstAttribute="leading" secondItem="I74-rv-BZI" secondAttribute="trailing" constant="12" id="vTw-Lf-a2n"/>
+                    <constraint firstAttribute="bottom" secondItem="V1d-94-khZ" secondAttribute="bottom" constant="12" id="WL6-2o-JVY"/>
+                    <constraint firstAttribute="trailing" secondItem="V1d-94-khZ" secondAttribute="trailing" id="hNA-Tp-NPm"/>
+                    <constraint firstItem="V1d-94-khZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="n34-zR-tpD"/>
+                    <constraint firstItem="V1d-94-khZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="uSb-Rd-qht"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
